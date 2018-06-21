@@ -1,0 +1,20 @@
+{
+  "name": "influencemarket",
+  "version": "1.0.0",
+  "description": "A marketplace where brands promote their products",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Jesus Mur Fontanals",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.6",
+    "mongoose": "^5.0.12",
+    "passport": "^0.4.0",
+    "passport-instagram": "^1.0.0"
+  }
+}

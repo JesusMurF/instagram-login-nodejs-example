@@ -1,0 +1,13 @@
+<ul>
+  <li>{{user.full_name}}</li>
+  <li>{{user.username}}</li>
+  <li>
+    <img src="{{user.profile_picture}}" alt="">
+  </li>
+  <li>{{user.bio}}</li>
+  <li>
+    <a href="{{user.website}}">{{user.website}}</a>
+  </li>
+  <li>media {{user.counts.media}} follows {{user.counts.follows}} followers {{user.counts.followed_by}}</li>
+</ul>
+<a href="/logout" class="button is-danger">Cerrar sesión</a>
