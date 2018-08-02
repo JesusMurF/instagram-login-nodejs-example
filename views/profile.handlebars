@@ -1,13 +1,41 @@
-<ul>
-  <li>{{user.full_name}}</li>
-  <li>{{user.username}}</li>
-  <li>
-    <img src="{{user.profile_picture}}" alt="">
-  </li>
-  <li>{{user.bio}}</li>
-  <li>
-    <a href="{{user.website}}">{{user.website}}</a>
-  </li>
-  <li>media {{user.counts.media}} follows {{user.counts.follows}} followers {{user.counts.followed_by}}</li>
-</ul>
-<a href="/logout" class="button is-danger">Cerrar sesión</a>
+<div class="container" style="margin-top: 40px;">
+  <div class="columns is-multiline">
+    <div class="column is-12">
+      <article class="media">
+        <figure class="media-left">
+          <p class="image is-64x64">
+            <img src="{{user.profile_picture}}">
+          </p>
+        </figure>
+        <div class="media-content">
+          <div class="content">
+            <p>
+              <strong>{{user.full_name}}</strong> <small>{{user.username}}</small>
+              <br>
+              {{user.bio}}
+              <br>
+              <small><a href="{{user.website}}">{{user.website}}</a></small>
+            </p>
+          </div>
+          <nav class="level is-mobile">
+            <div class="level-left">
+              <a class="level-item">
+                Media {{user.counts.media}}
+              </a>
+              <a class="level-item">
+                Followed {{user.counts.follows}}
+              </a>
+              <a class="level-item">
+                Followers {{user.counts.followed_by}}
+              </a>
+            </div>
+          </nav>
+        </div>
+        <br>
+      </article>
+    </div>
+    <div class="column">
+      <a class="button is-danger" href="/logout">Cerrar sesión</a>
+    </div>
+  </div>
+</div>
