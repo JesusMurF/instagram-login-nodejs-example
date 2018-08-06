@@ -1,16 +1,13 @@
 const passport = require('passport');
 const InstagramStrategy = require('passport-instagram').Strategy;
 const User = require('../models/User');
+const { CLIENT_ID, CLIENT_SECRET, CALLBACK_URL } = require('../config.json');
 
 const instaConfig = {
-  clientID: process.env.CLIENT_ID,
-  clientSecret: process.env.CLIENT_SECRET,
-  callbackURL: process.env.CALLBACK_URL
+  clientID: CLIENT_ID,
+  clientSecret: CLIENT_SECRET,
+  callbackURL: CALLBACK_URL
 };
-
-if (!instaConfig.clientID) {
-  throw new Error("Set the enviroment variables, that's the reason...");
-}
 
 const instagramInit = function(accessToken, refreshToken, profile, callback) {
   User.findOne({ 'instagram.id': profile.id }, function(err, user) {
